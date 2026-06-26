@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moving Text</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.25rem;
+    }
+    a, .empty {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .empty {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Moving Text - Summer 2026</h1>
+
+  <!-- A place to put the project links -->
+  <div id="links"></div>
+
+  <script type="module">
+    // List every sketch here as a path. Use "week_x/name" to group by week,
+    // or just "name" for something that isn't in a week folder.
+    // (Write paths without a trailing slash, like "week_1/scroll".)
+    const projects = [
+      "week_1/star_wars_crawl_1","week_1/star_wars_crawl_2", "week_1/star_wars_crawl_3", "week_1/star_wars_crawl_4", "week_1/star_wars_crawl_5",
+      "week_2/scroll",
+      "test"
+    ];
+
+    // The box on the page where we'll add headings and links.
+    const container = document.getElementById("links");
+
+    // Remembers the week we last printed a heading for.
+    let currentWeek = "";
+
+    for (const path of projects) {
+      // "week_1/scroll" has two parts; "test" has one.
+      const parts = path.split("/");
+      const hasWeek = parts.length > 1;
+      const week = hasWeek ? parts[0] : "";   // the week folder, or "" if none
+      const name = hasWeek ? parts[1] : path; // the project's own name
+
+      // Print the week's heading once: only when it's new.
+      if (hasWeek && week !== currentWeek) {
+        currentWeek = week;
+        const heading = document.createElement("h2");
+        heading.textContent = week;
+        container.appendChild(heading);
+      }
+
+      // Ask the server for this project's index.html
+      const response = await fetch(path + "/index.html");
+
+      // Make a link for the project
+      const link = document.createElement("a");
+      if (response.ok) { // if the index.html exists the response is ok
+        link.href = path + "/";
+        link.textContent = name;
+      } else {          // if index.html does not exist, make a grey icon using the "empty" css class
+        link.className = "empty";
+        link.textContent = name + " (no index.html yet)";
+      }
+      container.appendChild(link);
+    }
+  </script>
+</body>
+</html>
