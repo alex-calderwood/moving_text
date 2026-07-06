@@ -4,13 +4,27 @@
   <meta charset="UTF-8" />
   <title>Week 1 - Text Choreographer</title>
   <script src="lib/p5.js"></script>
+  <script src="engine.js"></script>
+  <script src="textEvents.js"></script>
   <script src="sketch.js"></script>
 </head>
 <body>
   <div id="words"></div>
 </body>
 <style>
+  body {
+    margin: 0;
+  }
+  /* overlap the p5 canvas and the words instead of stacking them */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
   #words {
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 10;
     width: 100vw;
     height: 100vh;
