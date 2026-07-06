@@ -43,7 +43,6 @@ function keyReleased() {
         let text = random(['pow', 'boom', 'brrrr', 'oomph', 'crash', 'bang', 'ow']);
         let x = random(0, windowWidth);
         let y = random(0, windowHeight);
-        
 
         let word = {
             "text": text,

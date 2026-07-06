@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Week 1 - Text Choreographer</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* dev control panel - not needed to add new text event types */
+    #controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      background: black;
+      padding: 8px 12px;
+      border-radius: 6px 6px 0 0;
+      font: 12px sans-serif;
+      color: white;
+    }
+
+    input,
+    select {
+      background: black;
+      color: white;
+      border: 1px solid white;
+      width: 70px;
+    }
+
+    #controls-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    #controls-fields {
+      display: flex;
+      gap: 10px;
+    }
+
+    #controls-fields label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  </style>
+  <script src="lib/p5.js"></script>
+  <script src="textEventTypes.js"></script>
+  <script src="engine.js"></script>
+  <script src="textEvents.js"></script>
+  <script src="sketch.js"></script>
+</head>
+<body>
+  <div id="words"></div>
+  <div id="controls">
+    <div id="controls-title"></div>
+    <div id="controls-fields">
+      <label>text <input type="text" id="control-text"></label>
+      <label>fromX <input type="number" id="control-fromX"></label>
+      <label>fromY <input type="number" id="control-fromY"></label>
+      <label>toX <input type="number" id="control-x"></label>
+      <label>toY <input type="number" id="control-y"></label>
+      <label>size <input type="number" id="control-size"></label>
+      <label>toScale <input type="number" id="control-toScale"></label>
+      <label>duration <input type="number" id="control-duration"></label>
+      <label>easing
+        <select id="control-easing">
+          <option value="linear">linear</option>
+          <option value="ease">ease</option>
+          <option value="ease-in">ease-in</option>
+          <option value="ease-out">ease-out</option>
+          <option value="ease-in-out">ease-in-out</option>
+          <option value="cubic-bezier(0.12, 0, 0.39, 0)">easeInSine</option>
+          <option value="cubic-bezier(0.61, 1, 0.88, 1)">easeOutSine</option>
+          <option value="cubic-bezier(0.32, 0, 0.67, 0)">easeInCubic</option>
+          <option value="cubic-bezier(0.33, 1, 0.68, 1)">easeOutCubic</option>
+          <option value="cubic-bezier(0.65, 0, 0.35, 1)">easeInOutCubic</option>
+          <option value="cubic-bezier(0.36, 0, 0.66, -0.56)">easeInBack</option>
+          <option value="cubic-bezier(0.34, 1.56, 0.64, 1)">easeOutBack</option>
+        </select>
+      </label>
+      <label>font
+        <select id="control-font">
+          <option value="Baskerville">Baskerville</option>
+          <option value="Palatino Linotype">Palatino Linotype</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Times">Times</option>
+          <option value="Futura">Futura</option>
+          <option value="Gill Sans">Gill Sans</option>
+          <option value="Century Gothic">Century Gothic</option>
+          <option value="Optima">Optima</option>
+          <option value="Avenir">Avenir</option>
+        </select>
+      </label>
+      <label>color <input type="color" id="control-color" value="#ffffff"></label>
+      <label>remove <input type="checkbox" id="control-remove"></label>
+
+    </div>
+  </div>
+</body>
+</html>

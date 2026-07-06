@@ -48,6 +48,8 @@
 //   style       - object of extra CSS applied to the element              default null
 //   keyframes   - Web Animations keyframes; overrides from/to             default null
 //   timing      - Web Animations timing object; overrides duration/easing default null
+//
+//   remove      - delete when slide finishes: false (default), true, or "fade"
 
 
 // ============================================================
@@ -64,9 +66,11 @@ const DEFAULT_STYLE = {
   "background": "#000000",
   "id": null,       // DOM ID defaults to 'text-<n> - where '<n>'is the number of the text
   "font": "Times New Roman",
+  "size": null,     // font-size, e.g. "50px"
   "style": null,// any other css, applied on top of whatever this is 
   "keyframes":  null, // overwrite the other animations
   "timing": null,
+  "remove": false,
 }
 
 const REQUIRED_FIELDS = ["text", "start", "font", "type"]
@@ -108,8 +112,10 @@ function createBaseElement(schema) {
 
     // take each word out of normal flow so words don't push each other around
     element.style.position = "absolute";
-    // anchor transforms to the text's center
-    element.style.transformOrigin = "center center";
+
+    if (schema.size != null) {
+        element.style.fontSize = schema.size;
+    }
 
     element.innerText = schema.text;
 
