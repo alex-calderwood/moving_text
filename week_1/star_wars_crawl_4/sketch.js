@@ -58,31 +58,62 @@ let activeBackground = "#000000";
 // ];
 
 // Option 3 - default
+// scenes = [
+//   // Title card — the words arrive, then the credit slips past.
+//   { effect: "unpack",    text: "This Is Just To Say",         frames: 180, color: "#FFD27F", size: 90, ease: "back",      font: "Georgia", background: "#2B2F57" },
+//   { effect: "slideLeft", text: "by William Carlos Williams",  frames: 150, color: "#9FB1D6", size: 50, font: "Courier New" },
+//   { effect: "pause", frames: 60 },
+
+//   { effect: "typewriter", text: "I have eaten", frames: 200, color: "#ECE3D0", size: 70, ease: "linear",  font: "Courier New", fadeOut: 0.05,  },
+//   { effect: "slide", text: "the plums", frames: 200, color: "#C8417F", size: 300, ease: "easeOut", font: "Georgia", fadeOut: 0.2, from: { scale: 1 }, to: { scale: 1.1 } }, // ripe, swelling — the purple sets in here
+//   { effect: "plop",       text: "that were in", frames: 90,  color: "#8FA0C8", size: 56 },
+//   { effect: "iris",       text: "the icebox",   frames: 120, color: "#BDEBFF", size: 80, ease: "easeOut", fadeOut: 0.1 },          // a cold door opens
+//   { effect: "pause", frames: 70 },
+
+//   { effect: "wipe",     text: "and which",         frames: 70,  color: "#B9B4D6", size: 48 }, // a quick reveal across
+//   { effect: "dissolve", text: "you were probably", frames: 120, color: "#B9B4D6", size: 56, ease: "easeOut", fadeOut: 0.25, wobbleX: 5, wobbleY:10 }, // uncertain
+//   { effect: "slide",    text: "saving",            frames: 130, color: "#C9C3E6", size: 68, ease: "easeOut", fadeOut: 0.1,                  from: { x: 0.5, y: 1.4 },  to: { x: 0.5, y: 0.5 } }, // rises from below
+//   { effect: "slide",    text: "for breakfast",     frames: 130, color: "#F2C14E", size: 68, ease: "easeOut", fadeOut: 0.1, font: "Georgia", from: { x: 0.5, y: -0.4 }, to: { x: 0.5, y: 0.5 } }, // descends from above — mirror of "saving"
+//   { effect: "pause", frames: 70 },
+
+//   { effect: "dissolve", text: "Forgive me", frames: 240, color: "#F58FB0", size: 210, ease: "easeInOut", font: "Georgia", fadeOut: 0.1 }, // still, sincere center; lingers and slowly fades
+//   { effect: "pause", frames: 50 },
+//   { effect: "rise", text: "they were delicious", frames: 120, color: "#F2A65A", size: 60, ease: "easeOut", fadeOut: 0.1, font: "Georgia" },
+//   { effect: "slide", text: "so sweet",           frames: 120, color: "#FFD27F", size: 25, ease: "easeOut", font: "Georgia", fadeOut: 0.0, from: { scale: 0.5 }, to: { scale: 1.2 } }, // savored
+//   { effect: "dissolve", text: "and so cold",     frames: 210, color: "#A9E4FF", size: 200, ease: "easeInOut", fadeOut: 0.45, },          // the lingering aftertaste, fading to black
+//   { effect: "pause", frames: 100},
+//   { effect: "pause", frames: 1, background: "#000000" },
+// ];
+
 scenes = [
-  // Title card — the words arrive, then the credit slips past.
-  { effect: "unpack",    text: "This Is Just To Say",         frames: 180, color: "#FFD27F", size: 90, ease: "back",      font: "Georgia", background: "#2B2F57" },
-  { effect: "slideLeft", text: "by William Carlos Williams",  frames: 150, color: "#9FB1D6", size: 50, font: "Courier New" },
-  { effect: "pause", frames: 60 },
-
-  { effect: "typewriter", text: "I have eaten", frames: 200, color: "#ECE3D0", size: 70, ease: "linear",  font: "Courier New", fadeOut: 0.05,  },
-  { effect: "slide", text: "the plums", frames: 200, color: "#C8417F", size: 300, ease: "easeOut", font: "Georgia", fadeOut: 0.2, from: { scale: 1 }, to: { scale: 1.1 } }, // ripe, swelling — the purple sets in here
-  { effect: "plop",       text: "that were in", frames: 90,  color: "#8FA0C8", size: 56 },
-  { effect: "iris",       text: "the icebox",   frames: 120, color: "#BDEBFF", size: 80, ease: "easeOut", fadeOut: 0.1 },          // a cold door opens
-  { effect: "pause", frames: 70 },
-
-  { effect: "wipe",     text: "and which",         frames: 70,  color: "#B9B4D6", size: 48 }, // a quick reveal across
-  { effect: "dissolve", text: "you were probably", frames: 120, color: "#B9B4D6", size: 56, ease: "easeOut", fadeOut: 0.25, wobbleX: 5, wobbleY:10 }, // uncertain
-  { effect: "slide",    text: "saving",            frames: 130, color: "#C9C3E6", size: 68, ease: "easeOut", fadeOut: 0.1,                  from: { x: 0.5, y: 1.4 },  to: { x: 0.5, y: 0.5 } }, // rises from below
-  { effect: "slide",    text: "for breakfast",     frames: 130, color: "#F2C14E", size: 68, ease: "easeOut", fadeOut: 0.1, font: "Georgia", from: { x: 0.5, y: -0.4 }, to: { x: 0.5, y: 0.5 } }, // descends from above — mirror of "saving"
-  { effect: "pause", frames: 70 },
-
-  { effect: "dissolve", text: "Forgive me", frames: 240, color: "#F58FB0", size: 210, ease: "easeInOut", font: "Georgia", fadeOut: 0.1 }, // still, sincere center; lingers and slowly fades
-  { effect: "pause", frames: 50 },
-  { effect: "rise", text: "they were delicious", frames: 120, color: "#F2A65A", size: 60, ease: "easeOut", fadeOut: 0.1, font: "Georgia" },
-  { effect: "slide", text: "so sweet",           frames: 120, color: "#FFD27F", size: 25, ease: "easeOut", font: "Georgia", fadeOut: 0.0, from: { scale: 0.5 }, to: { scale: 1.2 } }, // savored
-  { effect: "dissolve", text: "and so cold",     frames: 210, color: "#A9E4FF", size: 200, ease: "easeInOut", fadeOut: 0.45, },          // the lingering aftertaste, fading to black
-  { effect: "pause", frames: 100},
   { effect: "pause", frames: 1, background: "#000000" },
+
+  // Title card — the words arrive, then the credit slips past.
+
+  {effect: "dissolve", text :"Wombat sandwiches are terrible", frames : 100, color: "#FFFFFF" , size :75, ease:"Cubic", font: "Georgia", fadeOut: 0.4},
+    {effect: "dissolve", text :"Wombat sandwiches are terrible", frames : 100, color: "#A0A0A0" , size :50, ease:"Cubic", font: "Georgia", fadeOut:0.3, },
+  {effect: "dissolve", text :"Wombat sandwiches are terrible", frames : 200, color: "#FFFFFF" , size :20, ease:"Cubic", font: "Georgia", fadeOut:0.5, },
+  
+
+  // { effect: "typewriter", text: "I have eaten", frames: 200, color: "#ECE3D0", size: 70, ease: "linear",  font: "Courier New", fadeOut: 0.05,  },
+  // { effect: "slide", text: "the plums", frames: 200, color: "#C8417F", size: 300, ease: "easeOut", font: "Georgia", fadeOut: 0.2, from: { scale: 1 }, to: { scale: 1.1 } }, // ripe, swelling — the purple sets in here
+  // { effect: "plop",       text: "that were in", frames: 90,  color: "#8FA0C8", size: 200 },
+  // { effect: "iris",       text: "the icebox",   frames: 120, color: "#BDEBFF", size: 80, ease: "easeOut", fadeOut: 0.1 },          // a cold door opens
+  // { effect: "pause", frames: 10 },
+
+  // { effect: "wipe",     text: "and which",         frames: 70,  color: "#B9B4D6", size: 48 }, // a quick reveal across
+  // { effect: "dissolve", text: "you were probably", frames: 120, color: "#B9B4D6", size: 56, ease: "easeOut", fadeOut: 0.25, wobbleX: 5, wobbleY:10 }, // uncertain
+  // { effect: "slide",    text: "saving",            frames: 130, color: "#C9C3E6", size: 68, ease: "easeOut", fadeOut: 0.4,                  from: { x: 0.5, y: 1.4 },  to: { x: 0.5, y: 0.5 } }, // rises from below
+  // { effect: "slide",    text: "for breakfast",     frames: 130, color: "#F2C14E", size: 68, ease: "easeOut", fadeOut: 0.1, font: "Georgia", from: { x: 0.5, y: -0.4 }, to: { x: 0.5, y: 0.5 } }, // descends from above — mirror of "saving"
+  // { effect: "pause", frames: 70 },
+
+  // { effect: "dissolve", text: "Forgive me", frames: 240, color: "#F58FB0", size: 210, ease: "easeInOut", font: "Georgia", fadeOut: 0.1 }, // still, sincere center; lingers and slowly fades
+  // { effect: "pause", frames: 50 },
+  // { effect: "rise", text: "they were delicious", frames: 120, color: "#F2A65A", size: 60, ease: "easeOut", fadeOut: 0.1, font: "Georgia" },
+  // { effect: "slide", text: "so sweet",           frames: 120, color: "#FFD27F", size: 25, ease: "easeOut", font: "Georgia", fadeOut: 0.0, from: { scale: 0.5 }, to: { scale: 1.2 } }, // savored
+  // { effect: "dissolve", text: "and so cold",     frames: 210, color: "#A9E4FF", size: 200, ease: "easeInOut", fadeOut: 0.45, },          // the lingering aftertaste, fading to black
+  // { effect: "pause", frames: 100},
+  // { effect: "pause", frames: 1, background: "#000000" },
 ];
 
 // ============================================================
