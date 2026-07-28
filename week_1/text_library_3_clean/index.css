@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+/* overlap the p5 canvas and the words instead of stacking them */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#words {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==== text event styles below ==== */
+
+.slide {
+  transform-origin: center center;
+}
+
+.stretch {
+  transform-origin: 0px 0px;
+  animation: stretch forwards;
+}
+
+/* the css for the stretch textEvent */
+@keyframes stretch {
+  0% {
+    transform: translate(var(--fromX), var(--fromY)) scaleX(1);
+    animation-timing-function: var(--easing);
+  }
+  25% {
+    transform: translate(var(--fromX), var(--fromY)) scaleX(var(--xStretch));
+    animation-timing-function: var(--easing);
+  }
+  50% {
+    transform: translate(var(--toX), var(--fromY)) scaleX(1) scaleY(1);
+    animation-timing-function: var(--easing);
+  }
+  75% {
+    transform: translate(var(--toX), var(--fromY)) scaleX(1) scaleY(var(--yStretch));
+    animation-timing-function: var(--easing);
+  }
+  100% {
+    transform: translate(var(--toX), var(--toY)) scaleX(1) scaleY(1);
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Week 1 - Text Choreographer</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* dev control panel - not needed to add new text event types */
+    #controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      background: black;
+      padding: 8px 12px;
+      border-radius: 6px 6px 0 0;
+      font: 12px sans-serif;
+      color: white;
+    }
+
+    input,
+    select {
+      background: black;
+      color: white;
+      border: 1px solid white;
+      width: 70px;
+    }
+
+    #controls-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    #controls-fields {
+      display: flex;
+      gap: 10px;
+    }
+
+    #controls-fields label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  </style>
+  <script src="lib/p5.js"></script>
+  <script src="textEventTypes.js"></script>
+  <script src="engine.js"></script>
+  <script src="textEvents.js"></script>
+  <script src="sketch.js"></script>
+</head>
+<body>
+  <div id="words"></div>
+</body>
+</html>
