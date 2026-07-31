@@ -1,0 +1,31 @@
+.word {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 2em;
+    background-color: green;
+    animation: slide 20s linear infinite;
+}
+
+.word.bye {
+    top: 200px;
+    background-color: green;
+}
+
+@keyframes slide {
+  /* from {background-color: red;}
+  to   {background-color: yellow;} */
+
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    transform: scale(2) translate(200px, 200px) ;
+  }
+
+  100% {
+    /* background-color: red; */
+    transform: scaleX(4);
+  }
+}
