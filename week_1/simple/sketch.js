@@ -1,25 +1,31 @@
-let newWord = document.createElement("div");
-
-const keyframes = [
-  { transform: "rotate(0) translate3d(-50%, -50%, 0)", color: "black" },
-  { color: "#431236", offset: 0.3 },
-  { transform: "rotate(360deg) translate3d(-50%, -50%, 0)", color: "black" },
-];
-
-const timing = {
-  duration: 3000,
-  iterations: Infinity,
-};
+let body = document.querySelector("body");
 
 for (let i = 0; i < 10; i += 1) {
-    newWord.innerText = "[Drunk]"
+    let newWord = document.createElement("div");
 
-    let body = document.querySelector("body");
+    newWord.innerText = "[Drunk" + i + "]";
 
-    newWord.classList += "word";
-    console.log("body", body)
+    newWord.classList = "word";
+
+    let distance = 130 * i;
+
+    let color = "#ff28c6"
+    if (i % 2 == 0) {
+      color = "#238a2a"
+    }
+
+    const keyframes = [
+      { transform: `rotate(0) translate(${distance}px, 0px)`, color: "black" },
+      { color: color },
+      { transform: `rotate(360deg)  translate(${distance}px, 0px) `, color: "black" },
+    ];
+
+    const timing = {
+      duration: 5000,
+      iterations: Infinity,
+    };
+    
     body.appendChild(newWord);
-
+    console.log(newWord);
     newWord.animate(keyframes, timing);
-
 }
